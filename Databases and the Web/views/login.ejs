@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Login for <%=shopName%></title>
+    <link rel="stylesheet"  type="text/css" href="main.css" />
+  </head>
+  <body>
+    <!-- R4: Login page -->
+    <h1>Login for <%=shopName%></h1>
+    <p><a href="/">Home</a></p>
+    <!-- R4A: Display a form to users to log in to the dynamic web application -->
+    <form method="POST" action="/loggedin">
+        <p>Username: <input id="username" type="username" name="username" value="" /></p>
+        <p>Password: <input id="password" type="password" name="password" value="" /></p>
+        <input type="submit" value="Login" />
+      </form>
+  </body>
+</html>

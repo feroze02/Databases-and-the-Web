@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Update <%=shopName%></title>
+    <link rel="stylesheet"  type="text/css" href="main.css" />
+  </head>
+  <body>
+    <!-- R8: Update food page (only available to logged-in users) -->
+    <h1>Update <%=shopName%></h1>
+    <p><a href="/">Home</a></p>
+    <!-- R8A: Display search food form. Display a link to the home page -->
+    <form action="/update-result" method="GET">
+      <p>What food item do you want to update?</p>
+      <input id="search-box" type="text" name="keyword" value="">
+      <input type="submit" value="Search food item for update" >
+    </form>
+  </body>
+</html>

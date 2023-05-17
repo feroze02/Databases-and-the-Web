@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Welcome to <%=shopName%></title>
+    <link rel="stylesheet"  type="text/css" href="main.css" />
+  </head>
+  <body>
+    <h1><%=shopName%> Shop</h1>
+    <p><a href="/">Home</a></p>
+    <!-- R8B: Display all data related to the food found in the database to users in forms so users can update each field -->
+    <!-- R8C: Delete button to delete the whole record -->
+    <h2>Update or Delete the food item:</h2>
+    <% availableFooditem.forEach(function(food) { %>
+    <form method="POST" action="/updatefooditem">
+      <p>Id: <input id="id" type="text" name="id" value="<%= food.id %>" /></p>
+      <p>Name: <input id="name" type="text" name="name" value="<%= food.name %>" /></p>
+      <p>Typical values per: <input id="value" type="text" name="value" value="<%=food.value%>" /></p>
+      <p>Unit of the typical value: <input id="unit" type="text" name="unit" value="<%=food.unit%>" /></p>
+      <p>Carbs: <input id="carb" type="text" name="carb" value="<%=food.carb%>" /></p>
+      <p>Fat: <input id="fat" type="text" name="fat" value="<%=food.fat%>" /></p>
+      <p>Protein: <input id="protein" type="text" name="protein" value="<%=food.protein%>" /></p>
+      <p>Salt: <input id="salt" type="text" name="salt" value="<%=food.salt%>" /></p>
+      <p>Sugar: <input id="sugar" type="text" name="sugar" value="<%=food.sugar%>" /></p>
+      <p><input type="submit" value="Update Food Item" /></p>
+      </form>
+      <form method="POST" action="/fooditemdeleted">
+      <p><input type="hidden" id="id" type="text" name="id" value="<%= food.id %>" /></p>
+      <p><input type="hidden" id="name" type="name" name="name" value="<%= food.name %>" /></p>
+      <input type="submit" value="Delete Food Item" onclick="return confirm('Are you sure you want to delete this food item?');" />
+      </form>
+    <% }) %>
+  </body>
+</html>

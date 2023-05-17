@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Food item list <%=shopName%></title>
+    <link rel="stylesheet"  type="text/css" href="main.css" />
+    <style>
+      td,
+      th {
+          border: 1px solid rgb(190, 190, 190);
+          padding: 10px;
+      }
+
+      td {
+          text-align: center;
+      }
+
+      tr:nth-child(even) {
+          background-color: #eee;
+      }
+
+      th[scope="col"] {
+          background-color: #696969;
+          color: #fff;
+      }
+
+      th[scope="row"] {
+          background-color: #d7d9f2;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- R9: List food page (available to all users) -->
+    <h1><%=shopName%> Shop</h1>
+    <p><a href="/">Home</a></p>
+    <h2>Here are the food item:</h2>
+    <!-- R9A: Display all fields for all foods stored in the database. Display a link to the home page -->
+    <!-- R9B: list page is organised in a tabular format -->
+    <table>
+      <tr><th>Id</th><th>Name</th><th>Typical values per</th><th>Unit of the typical value</th><th>Carbs</th><th>Fat</th><th>Protein</th><th>Salt</th><th>Sugar</th></tr>
+      <% availableFooditem.forEach(function(food) { %>
+        <tr>
+          <td><%= food.id %></td>
+          <td><%= food.name %></td>
+          <td><%=food.value%></td>
+          <td><%=food.unit%></td>
+          <td><%=food.carb%></td>
+          <td><%=food.fat%></td>
+          <td><%=food.protein%></td>
+          <td><%=food.salt%></td>
+          <td><%=food.sugar%></td>
+        </tr>
+      <% }) %>    
+    </table>  
+  </body>
+</html>

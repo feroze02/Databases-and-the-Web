@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Add food item to <%=shopName%></title>
+    <link rel="stylesheet"  type="text/css" href="main.css" />
+  </head>
+  <body>
+    <!-- R6: Add food page (only available to logged-in users) -->
+    <h1><%=shopName%>: Add food</h1>
+    <p><a href="/">Home</a></p>
+    <!-- R6A: Display a form to users to add a new food item to the database -->
+    <form method="POST" action="/foodadded">
+        <p>Name: <input id="name" type="text" name="name" value="" /></p>
+        <p>Typical values per: <input id="value" type="text" name="value" value="" /></p>
+        <p>Unit of the typical value: <input id="unit" type="text" name="unit" value="" /></p>
+        <p>Carbs: <input id="carb" type="text" name="carb" value="" /></p>
+        <p>Fat: <input id="fat" type="text" name="fat" value="" /></p>
+        <p>Protein: <input id="protein" type="text" name="protein" value="" /></p>
+        <p>Salt: <input id="salt" type="text" name="salt" value="" /></p>
+        <p>Sugar: <input id="sugar" type="text" name="sugar" value="" /></p>
+        <input type="submit" value="Add Food Item" />
+      </form>
+  </body>
+</html>
+

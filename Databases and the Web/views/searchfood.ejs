@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Search <%=shopName%></title>
+    <link rel="stylesheet"  type="text/css" href="main.css" />
+  </head>
+  <body>
+    <!-- R7: Search food page -->
+    <h1>Search <%=shopName%></h1>
+    <p><a href="/">Home</a></p>
+    <!-- R7A: Display a form to users to search for a food item in the database -->
+    <form action="/search-result" method="GET">
+      <p>What food item do you want?</p>
+      <input id="search-box" type="text" name="keyword" value="">
+      <input type="submit" value="Search" >
+    </form>
+  </body>
+</html>
